@@ -5,7 +5,7 @@ export const TicketList = () => {
     
 
     useEffect(
-        () => {tickets
+        () => {
             fetch("http://localhost:8088/serviceTickets")
                 .then(res => res.json())
                 .then((data) => {

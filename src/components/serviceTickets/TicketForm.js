@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 
 export const TicketForm = () => {
-    const [ticket, update] = useState();
+    const [ticket, updateTicket] = useState({
+        description: "",
+        emergency: false
+    });
 
     const saveTicket = (event) => {
         event.preventDefault()
@@ -14,6 +17,13 @@ export const TicketForm = () => {
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
                     <input
+                        onChange={
+                            (evt) => {
+                                const copy = {...ticket}
+                                copy.description = evt.target.value
+                                updateTicket(copy)
+                            }
+                        }
                         required autoFocus
                         type="text"
                         className="form-control"
@@ -24,7 +34,15 @@ export const TicketForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Emergency:</label>
-                    <input type="checkbox"
+                    <input 
+                   onChange={
+                       (evt) => {
+                           const copy = {...ticket}
+                           copy.emergency = evt.target.checked
+                           updateTicket(copy)
+                       }
+                   }
+                    type="checkbox"
                         />
                 </div>
             </fieldset>
@@ -34,7 +52,3 @@ export const TicketForm = () => {
         </form>
     )
 }
-
-
-// onChange={} 
-// onChange={} 

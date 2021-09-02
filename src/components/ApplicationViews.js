@@ -17,7 +17,7 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route path="/tickets">
+            <Route exact path="/tickets">
                 <TicketList />
             </Route>
 

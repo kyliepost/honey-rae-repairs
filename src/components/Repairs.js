@@ -14,6 +14,7 @@ export const Repairs = () => (
           return (
             <>
               <NavBar />
+              <h1>Honey Rae's Repairs </h1>
               <ApplicationViews />
             </>
           );
